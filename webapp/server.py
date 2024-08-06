@@ -6,11 +6,11 @@ app = Flask(__name__)
 senha = os.getenv("senha")
 
 def get_db_connection():
-    conn = psycopg2.connect(host='maquina-backup-samirasouza.f.aivencloud.com',
+    conn = psycopg2.connect(host='dpg-cqp8rs5ds78s73e6dit0-a.oregon-postgres.render.com',
                             database='dbmovies',
-                            user='avnadmin',
+                            user='renderadmin',
                             password=senha,
-                            port = 22478)
+                            port = 5432)
     return conn
 
 

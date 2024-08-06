@@ -4,11 +4,14 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+password_db = os.getenv("password_db")
+user_db = os.getenv("user_db")
+
 def get_db_connection():
     conn = psycopg2.connect(host='maquina-backup-samirasouza.f.aivencloud.com',
                             database='dbmovies',
-                            user='avnadmin',
-                            password='AVNS_URSckpByR1MpRjOSnOK')
+                            user= user_db,
+                            password = password_db)
     return conn
 
 

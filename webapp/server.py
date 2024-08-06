@@ -3,12 +3,13 @@ import psycopg2
 from flask import Flask, render_template
 
 app = Flask(__name__)
+senha = os.getenv("senha")
 
 def get_db_connection():
     conn = psycopg2.connect(host='maquina-backup-samirasouza.f.aivencloud.com',
                             database='dbmovies',
                             user='avnadmin',
-                            password='AVNS_URSckpByR1MpRjOSnOK',
+                            password=senha,
                             port = 22478)
     return conn
 
